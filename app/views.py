@@ -4,13 +4,19 @@ from django.shortcuts import render
 
 def index(request) -> HttpResponse: 
     context: dict[str, Any]={
-        'title':'Home',
-        'content': 'Magazanin esas sehifesi - GULLER',
-        'list': ['first', 'second'],
-        'dict': {'first':1},
-        'is_authenticated':True
+        'title':'Home - home page ',
+        'content': 'Furniture Store HOME'
+        
          }
     return render (request, 'main/index.html',context)
 
-def about(request) -> HttpResponse: 
-    return HttpResponse ('About page')
+def about(request):
+    context: dict[str, Any]={
+        'title':'Home - about us',
+        'content': 'About us',
+        'text_on_page' : 'A text about why this store is so cool, and what a good product it is.'
+        
+         }
+    return render (request, 'main/about.html',context)
+
+   
